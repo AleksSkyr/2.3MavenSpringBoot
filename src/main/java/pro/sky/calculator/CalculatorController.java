@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/calculator")
 public class CalculatorController {
     private final CalculatorService calculator = new CalculatorServiceImpl();
+    @GetMapping
+    public String hello() {
+        return "<h3>Добро пожаловать калькулятор</h3>";
+    }
 
     @GetMapping("/plus")
     public String plus(@RequestParam int num1, @RequestParam int num2) {
